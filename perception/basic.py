@@ -58,6 +58,7 @@ def XOR(x1, x2):
 # y=h(w1*x1+w2*x2+b)   h激活函数（阶跃-感知机，非阶跃-神经网络）
 # sigmoid：h(x)=1/(1+exp(-x))
 # ReLU(Rectified Linear Unit)
+# 输出层激活函数：回归问题用恒等函数，分类问题用softmax函数
 
 
 # def step_function(x):
