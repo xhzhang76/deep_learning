@@ -92,6 +92,22 @@ def identity_function(x):
     return x
 
 
+# maybe overflow
+# def softmax(a):
+#     exp_a = np.exp(a)
+#     sum_exp_a = np.sum(exp_a)
+#     y = exp_a / sum_exp_a
+#     return y
+
+
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+    return y
+
+
 if __name__ == '__main__':
     print(XOR(0, 0))
     print(XOR(0, 1))
@@ -123,4 +139,8 @@ if __name__ == '__main__':
     B3 = np.array([0.1, 0.2])
     A3 = np.dot(Z2, W3) + B3  # [0.31682708 0.69627909]
     Y = identity_function(A3)  # [0.31682708 0.69627909]
+
+    a = np.array([0.3, 2.9, 4.0])
+    Y = softmax(a)  # [0.01821127 0.24519181 0.73659691]
+
 
